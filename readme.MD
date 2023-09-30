@@ -1,9 +1,11 @@
-## Usage
+## Pre-reqs
 
 In order to use this you will need to have go install. Follow this guide to install go https://go.dev/doc/install
 
-How to use - 
-Once you have go installed type the below command in your terminal. Give the 
+git clone or download the cod. 
+
+Running the script  - 
+Once you have go installed open a terminal. Make sure you have get_winners.go downloaded and in your current directory. type the below command in your terminal. 
 
 ```
 go run get_winnners.go (path_to_excel_file)
