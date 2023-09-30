@@ -1,0 +1,36 @@
+{
+  "events": [
+    {
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "id": "1",
+              "winner": true
+            },
+            {
+              "id": "2",
+              "winner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "id": "3",
+              "winner": true
+            },
+            {
+              "id": "4",
+              "winner": false
+            }
+          ]
+        }
+      ]
+    }    
+  ]
+}
