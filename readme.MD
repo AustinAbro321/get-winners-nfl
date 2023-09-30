@@ -13,7 +13,7 @@ go run get_winnners.go (path_to_excel_file)
 
 Example: 
 ```
-go run get_winnners.go /home/austin/Downloads/test.xlsx
+go run get_winners.go /home/austin/Downloads/test.xlsx
 ```
 
 A new excel file called calculatedWins.xlsx will be in the directory you called the script from

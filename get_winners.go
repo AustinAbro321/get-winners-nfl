@@ -102,10 +102,11 @@ func GetCurrentFootballSeasonYear() string {
 
 func GetWeek(s string) string {
 	re := regexp.MustCompile(`(\d+)`)
-	match := re.FindString(s)         
+	match := re.FindString(s)
 
 	if match == "" {
-		return "broken code"
+		fmt.Println("Make sure the week number is in the third cell of the first row")
+		os.Exit(1)
 	}
 
 	return match
@@ -114,6 +115,11 @@ func GetWeek(s string) string {
 func main() {
 	// Load the Excel file
 	args := os.Args
+	if len(args) < 2 {
+		fmt.Println("Please call this will an excel file")
+		fmt.Println("Example: go run get_winnners.go /home/austin/Downloads/test.xlsx")
+		os.Exit(1)
+	}
 	excelFileName := args[1]
 	newExcelFileName := "calculatedWins.xlsx"
 	xlFile, err := xlsx.OpenFile(excelFileName)
@@ -129,7 +135,7 @@ func main() {
 
 	currentWeek := GetWeek(sheet.Rows[0].Cells[2].String())
 	currentYear := GetCurrentFootballSeasonYear()
-	if  len(os.Args) > 2 {
+	if len(os.Args) > 2 {
 		currentYear = os.Args[2]
 	}
 	fmt.Printf("Current week %s and football year is %s\n", currentWeek, currentYear)

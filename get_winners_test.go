@@ -10,7 +10,7 @@ import (
 
 func TestDidTeamWin(t *testing.T) {
 	result := readJson("file.json")
-	got := teamWon("Lions",result)
+	got := teamWon("Lions", result)
 	expected := true
 
 	if got != expected {
@@ -34,7 +34,7 @@ func TestCreateResultMap(t *testing.T) {
 	}
 }
 
-func TestCreateResultMapAll(t *testing.T) {	
+func TestCreateResultMapAll(t *testing.T) {
 	result := readJson("file.json")
 	got := CreateResultMap(result)
 	expected := 32
@@ -44,7 +44,7 @@ func TestCreateResultMapAll(t *testing.T) {
 	}
 }
 
-func TestGetWeekNumber(t *testing.T) {	
+func TestGetWeekNumber(t *testing.T) {
 	got := GetWeek("week 13")
 	expected := "13"
 
