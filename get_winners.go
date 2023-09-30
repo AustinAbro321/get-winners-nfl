@@ -115,7 +115,7 @@ func main() {
 	// Load the Excel file
 	args := os.Args
 	excelFileName := args[1]
-	newExcelFileName := "newFile.xlsx"
+	newExcelFileName := "calculatedWins.xlsx"
 	xlFile, err := xlsx.OpenFile(excelFileName)
 	if err != nil {
 		log.Fatalf("Failed to open file: %v", err)
@@ -129,6 +129,9 @@ func main() {
 
 	currentWeek := GetWeek(sheet.Rows[0].Cells[2].String())
 	currentYear := GetCurrentFootballSeasonYear()
+	if  len(os.Args) > 2 {
+		currentYear = os.Args[2]
+	}
 	fmt.Printf("Current week %s and football year is %s\n", currentWeek, currentYear)
 	content := GetResultsJson(currentWeek, currentYear)
 	var payload map[string]any
